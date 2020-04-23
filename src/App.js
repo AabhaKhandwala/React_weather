@@ -1,7 +1,16 @@
 import React, { Component } from "react";
+import moment from "moment";
 
 class App extends Component {
   state = {};
+  getTime = () => {
+    let time = moment().format("llll");
+    console.log(time);
+
+    this.setState({
+      time: time,
+    });
+  };
 
   getWeather = () => {
     let zipInput = document.getElementById("zipcode").value;
@@ -27,6 +36,7 @@ class App extends Component {
             temperature: data.main.temp,
             city: data.name,
           });
+          this.getTime();
         });
       })
       .catch((err) => {
@@ -48,6 +58,7 @@ class App extends Component {
         <div>
           <p>{this.state.temperature}</p>
           <p>{this.state.city}</p>
+          <p>{this.state.time}</p>
         </div>
       </>
     );
