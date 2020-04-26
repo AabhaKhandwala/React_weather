@@ -35,7 +35,7 @@ h2 {
   min-height: 100vh;
 
   font-family: "montserrat", sans-serif;
-  background-image: url("/img/images.jpg");
+  background-image: url("images.jpg");
   /* background-color: rgb(87, 69, 74); */
   background-size: cover;
   background-position: top center;
